@@ -58,6 +58,9 @@ if txt:
     tagged_text=[token.text if token.pos_ in ['PUNCT','SYM'] else (token.text,token.pos_) for token in doc]
     st.markdown('### POS tagging')
     pretty_print(tagged_text)
+    st.markdown('### Lemmas')
+    tagged_text = [token.text if token.pos_ in ['PUNCT', 'SYM'] else (token.lemma_, token.pos_) for token in doc]
+    pretty_print(tagged_text)
     if doc.ents:
         st.markdown('### Entities')
         for token in doc.ents:
