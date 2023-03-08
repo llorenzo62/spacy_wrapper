@@ -51,6 +51,8 @@ st.sidebar.title(f'Spacy {version}')
 model_select=st.sidebar.selectbox('Select language',list(models.keys()),index=0)
 nlp=spacy.load(models[model_select])
 
+st.sidebar.markdown('Simple wrapper for [Galician *Spacy* model](https://github.com/llorenzo62/Galician_Spacy_model)')
+
 txt=st.text_area('Sentence to analyze','')
 
 if txt:
